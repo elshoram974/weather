@@ -1,1 +1,6 @@
-{}
+{
+    "home": "Home",
+    "thereIsNoSelectedPlace": "There is no selected place 😔\n select one now",
+    "search": "Search",
+    "searchAddress": "Search address"
+}
