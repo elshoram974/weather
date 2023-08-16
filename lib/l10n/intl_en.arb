@@ -4,5 +4,8 @@
     "search": "Search",
     "searchAddress": "Search address",
     "noConnection": "There is no connection with internet",
-    "failedToGetWeather": "Failed to get weather"
+    "failedToGetWeather": "Failed to get weather",
+    "updated": "Updated",
+    "max": "max",
+    "min": "min"
 }

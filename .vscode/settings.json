@@ -9,6 +9,8 @@
         "heatindex",
         "localtime",
         "maxtemp",
+        "mdoubleemp",
+        "mintemp",
         "mreweather",
         "precip",
         "totalprecip",

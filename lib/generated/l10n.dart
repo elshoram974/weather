@@ -109,6 +109,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Updated`
+  String get updated {
+    return Intl.message(
+      'Updated',
+      name: 'updated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `max`
+  String get max {
+    return Intl.message(
+      'max',
+      name: 'max',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `min`
+  String get min {
+    return Intl.message(
+      'min',
+      name: 'min',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

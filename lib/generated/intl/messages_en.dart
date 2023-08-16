@@ -25,11 +25,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "failedToGetWeather":
             MessageLookupByLibrary.simpleMessage("Failed to get weather"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "max": MessageLookupByLibrary.simpleMessage("max"),
+        "min": MessageLookupByLibrary.simpleMessage("min"),
         "noConnection": MessageLookupByLibrary.simpleMessage(
             "There is no connection with internet"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchAddress": MessageLookupByLibrary.simpleMessage("Search address"),
         "thereIsNoSelectedPlace": MessageLookupByLibrary.simpleMessage(
-            "There is no selected place 😔\n select one now")
+            "There is no selected place 😔\n select one now"),
+        "updated": MessageLookupByLibrary.simpleMessage("Updated")
       };
 }

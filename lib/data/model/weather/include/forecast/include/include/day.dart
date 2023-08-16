@@ -5,6 +5,8 @@ import '../../../current/include/condition.dart';
 class Day {
   final double maxtempC;
   final double maxtempF;
+  final double mintempC;
+  final double mintempF;
   final double? mdoubleempC;
   final double? mdoubleempF;
   final double avgtempC;
@@ -25,6 +27,8 @@ class Day {
   final double uv;
 
   Day({
+    required this.mintempC,
+    required this.mintempF,
     required this.maxtempC,
     required this.maxtempF,
     required this.mdoubleempC,
@@ -50,6 +54,8 @@ class Day {
   Day copyWith({
     double? maxtempC,
     double? maxtempF,
+    double? mintempC,
+    double? mintempF,
     double? mdoubleempC,
     double? mdoubleempF,
     double? avgtempC,
@@ -72,6 +78,8 @@ class Day {
       Day(
         maxtempC: maxtempC ?? this.maxtempC,
         maxtempF: maxtempF ?? this.maxtempF,
+        mintempC: mintempC ?? this.mintempC,
+        mintempF: mintempF ?? this.mintempF,
         mdoubleempC: mdoubleempC ?? this.mdoubleempC,
         mdoubleempF: mdoubleempF ?? this.mdoubleempF,
         avgtempC: avgtempC ?? this.avgtempC,
@@ -99,6 +107,8 @@ class Day {
   factory Day.fromJson(Map<String, dynamic> json) => Day(
         maxtempC: json["maxtemp_c"]?.toDouble(),
         maxtempF: json["maxtemp_f"]?.toDouble(),
+        mintempC: json["mintemp_c"]?.toDouble(),
+        mintempF: json["mintemp_f"]?.toDouble(),
         mdoubleempC: json["mdoubleemp_c"]?.toDouble(),
         mdoubleempF: json["mdoubleemp_f"]?.toDouble(),
         avgtempC: json["avgtemp_c"],
@@ -122,6 +132,8 @@ class Day {
   Map<String, dynamic> toJson() => {
         "maxtemp_c": maxtempC,
         "maxtemp_f": maxtempF,
+        "mintemp_c": mintempC,
+        "mintemp_f": mintempF,
         "mdoubleemp_c": mdoubleempC,
         "mdoubleemp_f": mdoubleempF,
         "avgtemp_c": avgtempC,

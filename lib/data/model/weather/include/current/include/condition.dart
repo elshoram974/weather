@@ -4,6 +4,8 @@ class Condition {
   final String text;
   final String icon;
   final int code;
+  String get assetsIcon =>
+      icon.replaceAll('//cdn.weatherapi.com', 'assets/pic');
 
   Condition({
     required this.text,
@@ -23,7 +25,8 @@ class Condition {
       );
 
   factory Condition.newEmpty() => Condition(text: '', icon: '', code: 0);
-  factory Condition.fromRawJson(String str) => Condition.fromJson(json.decode(str));
+  factory Condition.fromRawJson(String str) =>
+      Condition.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
