@@ -8,7 +8,15 @@ import '../../core/services/shared_preference.dart';
 import 'search_state.dart';
 
 class SearchCubit extends Cubit<SearchState> {
-  SearchCubit() : super(SearchInitial()) {
+  final BuildContext context;
+  SearchCubit(this.context) : super(SearchInitial()) {
+    // Connectivity().onConnectivityChanged.listen((result) {
+    //   if ((result == ConnectivityResult.wifi ||
+    //           result == ConnectivityResult.mobile) &&
+    //       state is SearchFailure) {
+    //     getWeather(null);
+    //   }
+    // });
     getSavedQ();
     initControllers();
   }
@@ -34,19 +42,19 @@ class SearchCubit extends Cubit<SearchState> {
       suggestions.addAll(await CRUD.getQ(pattern));
       emit(SearchSuccess());
     } catch (e) {
+      suggestions.clear();
       emit(SearchFailure());
     }
     return suggestions;
   }
 
-  void onSuggestionSelected(String suggestions, BuildContext context) async {
+  void onSuggestionSelected(String suggestions) async {
     controller.text = suggestions;
     q = suggestions;
     Prefs.shared.setString(AppKeys.qName, suggestions);
     emit(SearchSuccess());
 
-    BlocProvider.of<WeatherCubit>(context).getWeather();
-    
+    BlocProvider.of<WeatherCubit>(context).getWeather(context);
 
     Navigator.pop(context);
   }

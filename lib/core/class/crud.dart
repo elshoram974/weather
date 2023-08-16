@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../../data/model/search_model.dart';
+import '../../data/model/weather/weather.dart';
 import '../constants/links.dart';
 
 abstract class CRUD {
@@ -22,5 +23,17 @@ abstract class CRUD {
       throw 'failed to search';
     }
     return suggestions;
+  }
+
+  static Future<Weather> getWeather(String q) async {
+    Uri url = Uri.parse(AppLinks.forecast(q));
+    try {
+      http.Response response = await http.get(url);
+      if (response.statusCode == 200) return Weather.fromRawJson(response.body);
+    } catch (e) {
+      throw 'failed to get weather';
+    }
+
+    throw 'failed to get weather';
   }
 }

@@ -10,8 +10,7 @@ abstract class AppLinks {
   // "&aqi=no"
   static String current(String q) => '$baseLink/current.json?$_key&q=$q';
 
-  // "&aqi=no&alerts=no"
-  static String forecast(String q) =>'$baseLink/forecast.json$_key&q=$q&days=5';
+  static String forecast(String q) =>'$baseLink/forecast.json?$_key&q=$q&days=5&aqi=no&alerts=no';
 
   static String search(String q) => '$baseLink/search.json?$_key&q=$q';
 

@@ -89,6 +89,26 @@ class S {
       args: [],
     );
   }
+
+  /// `There is no connection with internet`
+  String get noConnection {
+    return Intl.message(
+      'There is no connection with internet',
+      name: 'noConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get weather`
+  String get failedToGetWeather {
+    return Intl.message(
+      'Failed to get weather',
+      name: 'failedToGetWeather',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

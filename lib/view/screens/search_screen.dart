@@ -12,7 +12,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SearchCubit(),
+      create: (context) => SearchCubit(context),
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(title: Text(S.of(context).search), centerTitle: true),
@@ -37,8 +37,6 @@ class SearchBody extends StatelessWidget {
           vertical: AppConstants.defaultPadding / 2,
         ),
         children: [
-          Text(S.of(context).searchAddress),
-          const SizedBox(height: AppConstants.defaultPadding),
           TypeAheadField(
             hideOnEmpty: true,
             textFieldConfiguration: TextFieldConfiguration(
@@ -54,8 +52,7 @@ class SearchBody extends StatelessWidget {
             ),
             suggestionsCallback: searchCubit.suggestionsCallback,
             itemBuilder: (context, q) => ListTile(title: Text(q)),
-            onSuggestionSelected: (q) =>
-                searchCubit.onSuggestionSelected(q, context),
+            onSuggestionSelected:searchCubit.onSuggestionSelected,
           )
         ],
       ),

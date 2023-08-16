@@ -22,7 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "failedToGetWeather":
+            MessageLookupByLibrary.simpleMessage("Failed to get weather"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "noConnection": MessageLookupByLibrary.simpleMessage(
+            "There is no connection with internet"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchAddress": MessageLookupByLibrary.simpleMessage("Search address"),
         "thereIsNoSelectedPlace": MessageLookupByLibrary.simpleMessage(

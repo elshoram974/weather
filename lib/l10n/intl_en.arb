@@ -2,5 +2,7 @@
     "home": "Home",
     "thereIsNoSelectedPlace": "There is no selected place 😔\n select one now",
     "search": "Search",
-    "searchAddress": "Search address"
+    "searchAddress": "Search address",
+    "noConnection": "There is no connection with internet",
+    "failedToGetWeather": "Failed to get weather"
 }

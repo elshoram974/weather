@@ -1,5 +1,17 @@
 {
     "cSpell.words": [
-        "mreweather"
+        "avghumidity",
+        "avgtemp",
+        "avgvis",
+        "dewpoint",
+        "feelslike",
+        "forecastday",
+        "heatindex",
+        "localtime",
+        "maxtemp",
+        "mreweather",
+        "precip",
+        "totalprecip",
+        "totalsnow"
     ]
 }
