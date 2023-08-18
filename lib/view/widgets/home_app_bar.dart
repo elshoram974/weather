@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../controller/weather_cubit/weather_cubit.dart';
-import '../../controller/weather_cubit/weather_state.dart';
 import '../../core/constants/app_constants.dart';
-import '../../generated/l10n.dart';
+import '../../core/services/localize.dart';
 import '../../routes_manger.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -12,22 +8,22 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<WeatherCubit, WeatherState>(
-      builder: (context, state) {
-        return AppBar(
-          title: Text(S.of(context).home),
-          centerTitle: true,
-          backgroundColor: Colors.amber,
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () => searchIcon(context),
-            ),
-            const SizedBox(width: AppConstants.defaultPadding / 2),
-          ],
-        );
-      },
+    // return BlocBuilder<WeatherCubit, WeatherState>(
+    // builder: (context, state) {
+    return AppBar(
+      title: Text(MyLocale.s.home),
+      centerTitle: true,
+      // backgroundColor: Colors.amber,
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: () => searchIcon(context),
+        ),
+        const SizedBox(width: AppConstants.defaultPadding / 2),
+      ],
     );
+    // },
+    // );
   }
 
   void searchIcon(BuildContext context) {

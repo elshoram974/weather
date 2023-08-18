@@ -4,7 +4,7 @@ import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:mreweather/controller/search_cubit/search_cubit.dart';
 
 import '../../core/constants/app_constants.dart';
-import '../../generated/l10n.dart';
+import '../../core/services/localize.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -15,7 +15,7 @@ class SearchScreen extends StatelessWidget {
       create: (context) => SearchCubit(context),
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(title: Text(S.of(context).search), centerTitle: true),
+        appBar: AppBar(title: Text(MyLocale.s.search), centerTitle: true),
         body: const SearchBody(),
       ),
     );
@@ -42,8 +42,8 @@ class SearchBody extends StatelessWidget {
             textFieldConfiguration: TextFieldConfiguration(
               controller: searchCubit.controller,
               decoration: InputDecoration(
-                labelText: S.of(context).search,
-                hintText: S.of(context).searchAddress,
+                labelText: MyLocale.s.search,
+                hintText: MyLocale.s.searchAddress,
                 border: OutlineInputBorder(
                   borderRadius:
                       BorderRadius.circular(AppConstants.borderRadius),

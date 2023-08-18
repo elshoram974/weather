@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+
 class Condition {
   final String text;
   final String icon;
@@ -12,6 +14,21 @@ class Condition {
     required this.icon,
     required this.code,
   });
+
+  MaterialColor? get color {
+    switch (text) {
+      case 'Sunny':
+        return Colors.yellow;
+      case 'Clear':
+        return Colors.green;
+      // case 'Sunny': return Colors.yellow;
+      // case 'Sunny': return Colors.yellow;
+      // case 'Sunny': return Colors.yellow;
+
+      default:
+        return null;
+    }
+  }
 
   Condition copyWith({
     String? text,

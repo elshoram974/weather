@@ -54,7 +54,7 @@ class SearchCubit extends Cubit<SearchState> {
     Prefs.shared.setString(AppKeys.qName, suggestions);
     emit(SearchSuccess());
 
-    BlocProvider.of<WeatherCubit>(context).getWeather(context);
+    BlocProvider.of<WeatherCubit>(context).getWeather();
 
     Navigator.pop(context);
   }

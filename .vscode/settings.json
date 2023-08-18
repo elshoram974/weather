@@ -14,6 +14,7 @@
         "mreweather",
         "precip",
         "totalprecip",
-        "totalsnow"
+        "totalsnow",
+        "weatherapi"
     ]
 }
